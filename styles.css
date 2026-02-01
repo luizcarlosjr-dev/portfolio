@@ -1,0 +1,662 @@
+:root {
+    --bg-principal: #0b1120;
+    --bg-secundario: #111827;
+
+    --primaria: #6366f1;
+    --secundaria: #22d3ee;
+
+    --texto-principal: #e5e7eb;
+    --texto-suave: #9ca3af;
+
+    --vidro: rgba(255,255,255,0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(99,102,241,0.15), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(34,211,238,0.12), transparent 45%),
+        linear-gradient(135deg, var(--bg-secundario), var(--bg-principal));
+    color: var(--texto-principal);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+.particulas {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(99,102,241,.25), transparent 35%),
+        radial-gradient(circle at 80% 70%, rgba(34,211,238,.2), transparent 35%);
+    z-index: -1;
+}
+
+/* NAV */
+.navegacao {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 9999;
+    background: rgba(11,17,32,0.7);
+    backdrop-filter: blur(10px);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+    padding: 1rem;
+}
+
+.menu-link {
+    color: var(--texto-principal);
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+}
+
+.menu-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background: linear-gradient(90deg,var(--primaria),var(--secundaria));
+    transition: .3s;
+}
+
+.menu-link:hover::after,
+.menu-link.ativo::after {
+    width: 100%;
+}
+
+/* CABEÇALHO */
+.cabecalho {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+.foto-perfil {
+    width: 280px;
+    border-radius: 50%;
+    border: 4px solid var(--vidro);
+    box-shadow: 0 0 30px rgba(99,102,241,.4);
+    animation: flutuar 5s infinite;
+}
+
+h2 {
+    background: linear-gradient(90deg,var(--primaria),var(--secundaria));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+/* SECTIONS */
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* SOBRE */
+.sobre-caixa {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+    background: rgba(255,255,255,.05);
+    border: 1px solid var(--vidro);
+    border-radius: 16px;
+}
+
+/* PROJETOS */
+.projetos-caixa {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 2rem;
+}
+
+.projetos-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background:
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+    border: 1px solid rgba(99,102,241,.25);
+    backdrop-filter: blur(8px);
+    transition: transform .4s, box-shadow .4s;
+}
+
+
+.projetos-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(99,102,241,.35);
+}
+
+.projetos-imagem {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.caixa-textos-projeto {
+    padding: 1.5rem;
+}
+
+.projeto-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(11,17,32,.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: .3s;
+}
+
+.projetos-card:hover .projeto-overlay {
+    opacity: 1;
+}
+
+.projeto-botoes {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-projeto {
+    padding: .8rem 1.6rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.primary {
+    background: linear-gradient(45deg,var(--primaria),var(--secundaria));
+    color: #fff;
+}
+
+.secondary {
+    border: 1px solid var(--primaria);
+    color: var(--texto-principal);
+}
+
+.btn-projeto:hover {
+    transform: scale(1.08);
+}
+
+/* CONTATO FUTURISTA */
+.contatos .section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Cards de contato */
+.contato-cards {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contato-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--vidro);
+    text-decoration: none;
+    color: var(--texto-principal);
+    width: 120px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.contato-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    animation-play-state: paused;
+    filter: drop-shadow(0 0 6px var(--secundaria));
+
+    border: 2px solid transparent;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primaria),
+            var(--secundaria),
+            var(--primaria)
+        ) border-box;
+
+    background-size: 300% 100%;
+    animation: border-run 2.5s linear infinite;
+
+    mask:
+        linear-gradient(#000 0 0) padding-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) padding-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+
+    pointer-events: none;
+}
+
+.contato-card:hover::before {
+    animation-play-state: running;
+}
+
+
+.contato-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(99,102,241,0.7);
+}
+
+.contato-card img {
+    width: 40px;
+    height: 40px;
+    transition: filter 0.3s;
+}
+
+.contato-card:hover img {
+    filter: drop-shadow(0 0 8px var(--secundaria));
+}
+
+/* Formulário futurista */
+.formulario-contato {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    border: 1px solid var(--vidro);
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(99,102,241,0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.formulario-contato::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 2px;
+
+    background: linear-gradient(
+        90deg,
+        var(--primaria),
+        var(--secundaria),
+        var(--primaria)
+    );
+
+    background-size: 300% 100%;
+    animation: border-run 3s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+}
+
+
+.formulario-contato:hover {
+    box-shadow: 0 0 60px rgba(99,102,241,1);
+}
+
+.campo-form {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--vidro);
+    border-radius: 8px;
+    color: var(--texto-principal);
+}
+
+.botao-form {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.botao-form:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(99,102,241,0.8);
+}
+
+/* HABILIDADES (sobre-icons) */
+.sobre-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, filter 0.3s, opacity 0.3s;
+    cursor: default;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Nível 1: completo */
+.icon.nivel1 {
+    animation: pulse 1.5s infinite alternate;
+}
+
+/* Nível 2: em construção */
+.icon.nivel2 img {
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+.icon.nivel2:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+/* Nível 3: futuro */
+.icon.nivel3 img {
+    filter: grayscale(100%);
+    opacity: 0.3;
+    animation: pulse-futuro 1.5s infinite alternate;
+}
+.icon.nivel3:hover img {
+    opacity: 0.6;
+}
+
+/* KEYFRAMES */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+@keyframes pulse-futuro {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+@keyframes flutuar {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes piscar {
+    0%,50% { opacity: 1; }
+    51%,100% { opacity: 0; }
+}
+
+@keyframes loop-gradiente {
+    0% { transform: rotate(0deg); background-position: 0% 50%; }
+    100% { transform: rotate(360deg); background-position: 300% 50%; }
+}
+
+@keyframes pulsar-neon {
+    0%,100% { box-shadow: 0 0 20px rgba(99,102,241,0.3); }
+    50% { box-shadow: 0 0 50px rgba(99,102,241,0.7); }
+}
+
+/* TITULO ANIMADO */
+.titulo-animado span {
+    background: linear-gradient(90deg,var(--primaria),var(--secundaria));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    opacity: 0;
+    display: inline-block;
+    transform: translateY(20px);
+    animation: letra 0.6s forwards;
+}
+
+@keyframes letra {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTIONS */
+#sobre, #projetos, #contatos {
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-titulo {
+    font-size: 2.4rem;
+    background: linear-gradient(90deg,var(--primaria),var(--secundaria));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* FADE ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.projetos-card:nth-child(1) { transition-delay: 0.1s; }
+.projetos-card:nth-child(2) { transition-delay: 0.3s; }
+.projetos-card:nth-child(3) { transition-delay: 0.6s; }
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .menu {
+        gap: 1rem;
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+    }
+    .foto-perfil { width: 180px; }
+    h1 { font-size: 1.6rem; }
+    .cabecalho-sub-titulo {
+        font-size: 1rem;
+        text-align: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .projetos-caixa { grid-template-columns: 1fr; }
+    section { padding: 4rem 1rem; }
+    .section-container { padding: 0 1rem; }
+    .section-titulo { font-size: 1.8rem; }
+    .sobre-icons { gap: 1rem; }
+    .icon { width: 50px; height: 50px; }
+    .contato-cards { flex-direction: column; gap: 1rem; }
+    .contato-card { width: 70%; }
+}
+
+.cabecalho-sub-titulo .cursor {
+    color: var(--secundaria);
+    font-weight: bold;
+    animation: piscar 1s infinite;
+}
+
+@keyframes border-run {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 300% 50%;
+    }
+}
+
+.formulario-contato::before {
+    pointer-events: none;
+    z-index: 1;
+}
+
+.formulario-contato::after {
+    pointer-events: none;
+}
+
+
+/* ===== CAIXA NEON BASE (REUTILIZÁVEL) ===== */
+.caixa-neon {
+    position: relative;
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    border: 1px solid var(--vidro);
+    overflow: hidden;
+    z-index: 0;
+    box-shadow: 0 0 20px rgba(99,102,241,0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.caixa-neon:hover {
+    box-shadow: 0 0 60px rgba(99,102,241,0.9);
+}
+
+/* Borda animada */
+.caixa-neon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: 16px;
+
+    background: linear-gradient(
+        90deg,
+        var(--primaria),
+        var(--secundaria),
+        var(--primaria)
+    );
+    background-size: 300% 100%;
+    animation: border-run 3s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+.projetos-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--primaria),
+        var(--secundaria),
+        var(--primaria)
+    );
+    background-size: 300% 100%;
+    animation: border-run 4s linear infinite;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.projetos-card:hover::before {
+    opacity: 1;
+}
+
+.caixa-textos-projeto h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg,var(--primaria),var(--secundaria));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.caixa-textos-projeto p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--texto-suave);
+}
+
+.projetos-imagem {
+    transition: transform 0.6s ease;
+}
+
+.projetos-card:hover .projetos-imagem {
+    transform: scale(1.05);
+}
+
+

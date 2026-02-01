@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfólio | Luiz Carlos</title>
+
+    <meta name="description" content="Portfólio de Luiz Carlos da Silva Junior, Desenvolvedor Full Stack em formação. Projetos em HTML, CSS e JavaScript.">
+
+    <link rel="icon" href="./img/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="particulas"></div>
+
+<!-- NAV -->
+<nav class="navegacao">
+    <ul class="menu">
+        <li><a href="#inicio" class="menu-link">Início</a></li>
+        <li><a href="#sobre" class="menu-link">Sobre</a></li>
+        <li><a href="#projetos" class="menu-link">Projetos</a></li>
+        <li><a href="#contatos" class="menu-link">Contato</a></li>
+    </ul>
+</nav>
+
+<!-- CABEÇALHO -->
+<main id="inicio" class="cabecalho">
+    <img src="./img/perfil.png" alt="Foto de Luiz Carlos da Silva Junior" class="foto-perfil">
+    <h1 class="titulo-animado">Luiz Carlos da Silva Junior</h1>
+    <p class="cabecalho-sub-titulo">
+        Desenvolvedor Full Stack em formação <span class="cursor">|</span> JavaScript • HTML • CSS
+    </p>
+</main>
+
+<!-- SOBRE -->
+<section id="sobre">
+    <div class="section-container">
+        <h2 class="section-titulo">Sobre mim</h2>
+
+        <div class="sobre-caixa caixa-neon">
+            <p>
+                Sou um profissional em transição para Desenvolvimento Full Stack, com experiência prática
+                em projetos utilizando HTML, CSS e JavaScript. Tenho foco em código limpo, boas práticas
+                e experiência do usuário. Atualmente, estou expandindo meus conhecimentos em frameworks
+                modernos e tecnologias backend.
+            </p>
+        </div>
+
+        <div class="sobre-icons fade">
+            <div class="icon nivel1" title="HTML5"><img src="./img/html5.png" alt="HTML5"></div>
+            <div class="icon nivel1" title="CSS3"><img src="./img/css3.png" alt="CSS3"></div>
+            <div class="icon nivel1" title="Bootstrap"><img src="./img/bootstrap.png" alt="Bootstrap"></div>
+            <div class="icon nivel1" title="JavaScript"><img src="./img/javascript.png" alt="JavaScript"></div>
+
+            <div class="icon nivel2" title="React"><img src="./img/react.png" alt="React"></div>
+            <div class="icon nivel2" title="Angular"><img src="./img/angular.png" alt="Angular"></div>
+            <div class="icon nivel2" title="Node.js"><img src="./img/nodejs.png" alt="Node.js"></div>
+
+            <div class="icon nivel3" title="Java"><img src="./img/java.png" alt="Java"></div>
+            <div class="icon nivel3" title="C#"><img src="./img/csharp.png" alt="C#"></div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos">
+    <div class="section-container">
+        <h2 class="section-titulo">Meus Projetos</h2>
+
+        <div class="projetos-caixa">
+
+            <!-- PROJETO 1 -->
+            <div class="projetos-card fade">
+                <img src="./img/projeto1.png" alt="Jogo Mata Mosquito em JavaScript" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3>Jogo Mata Mosquito</h3>
+                    <p>
+                        Jogo interativo desenvolvido com JavaScript puro, explorando eventos,
+                        manipulação do DOM, controle de tempo e lógica de jogo.
+                    </p>
+                </div>
+                <div class="projeto-overlay">
+                    <div class="projeto-botoes">
+                        <a href="jogo-mata-mosquito/" target="_blank" class="btn-projeto primary">
+                            Ver projeto
+                        </a>
+                        <a href="https://github.com/luizcarlosjr-dev/portfolio/tree/main/jogo-mata-mosquito" target="_blank" class="btn-projeto secondary">
+                            Código
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJETO 2 -->
+            <div class="projetos-card fade">
+                <img src="./img/projeto2.png" alt="Conversor de moedas com JavaScript" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3>Conversor de Moedas</h3>
+                    <p>
+                        Aplicação web que consome API externa para conversão de moedas em tempo real,
+                        utilizando fetch, async/await e tratamento de erros.
+                    </p>
+                </div>
+                <div class="projeto-overlay">
+                    <div class="projeto-botoes">
+                        <a href="conversor-de-moedas/" target="_blank" class="btn-projeto primary">
+                            Ver projeto
+                        </a>
+                        <a href="https://github.com/luizcarlosjr-dev/portfolio/tree/main/conversor-de-moedas" target="_blank" class="btn-projeto secondary">
+                            Código
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJETO 3 -->
+            <div class="projetos-card fade">
+                <img src="./img/projeto3.png" alt="Aplicativo de previsão do tempo" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3>Previsão do Tempo</h3>
+                    <p>
+                        Sistema web que consome API meteorológica e exibe dados climáticos em tempo real,
+                        com interface responsiva e foco na experiência do usuário.
+                    </p>
+                </div>
+                <div class="projeto-overlay">
+                    <div class="projeto-botoes">
+                        <a href="previsao-do-tempo/" target="_blank" class="btn-projeto primary">
+                            Ver projeto
+                        </a>
+                        <a href="https://github.com/luizcarlosjr-dev/portfolio/tree/main/previsao-do-tempo" target="_blank" class="btn-projeto secondary">
+                            Código
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contatos" class="contatos">
+    <div class="section-container">
+        <h2 class="section-titulo">Contato</h2>
+
+        <div class="contato-cards">
+            
+            <a href="https://www.linkedin.com/in/luiz-carlos-silva-junior-264a24280" target="_blank" class="contato-card">
+                <img src="./img/linkedin.png" alt="LinkedIn">
+                <span>LinkedIn</span>
+            </a>
+
+            <a href="https://github.com/luizcarlosjr-dev/" target="_blank" class="contato-card">
+                <img src="./img/github.png" alt="GitHub">
+                <span>GitHub</span>
+            </a>
+        </div>
+
+        <form class="formulario-contato" onsubmit="enviarWhats(event)">
+            <input id="nome" class="campo-form" placeholder="Nome" required>
+            <textarea id="mensagem" class="campo-form" rows="5" placeholder="Mensagem" required></textarea>
+            <button class="botao-form">Enviar WhatsApp</button>
+        </form>
+    </div>
+</section>
+
+<!-- SCRIPTS -->
+<script>
+function enviarWhats(e){
+    e.preventDefault()
+    const nome = document.getElementById("nome").value
+    const msg = document.getElementById("mensagem").value
+    window.open(`https://wa.me/5514910042214?text=${encodeURIComponent(`Olá! Me chamo ${nome}. ${msg}`)}`)
+}
+
+// Scroll ativo
+const sections = document.querySelectorAll("section, main")
+const navLinks = document.querySelectorAll(".menu-link")
+
+window.addEventListener("scroll", () => {
+    let current = ""
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100
+        if (scrollY >= sectionTop) current = section.getAttribute("id")
+    })
+    navLinks.forEach(link => {
+        link.classList.remove("ativo")
+        if (link.getAttribute("href") === `#${current}`) link.classList.add("ativo")
+    })
+})
+
+// Fade
+const fades = document.querySelectorAll(".fade")
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        entry.target.classList.toggle("show", entry.isIntersecting)
+    })
+}, { threshold: 0.3 })
+
+fades.forEach(el => observer.observe(el))
+
+// Título animado
+const titulo = document.querySelector(".titulo-animado")
+const texto = titulo.innerText
+titulo.innerHTML = ""
+
+texto.split("").forEach((letra, index) => {
+    const span = document.createElement("span")
+    span.innerText = letra === " " ? "\u00A0" : letra
+    span.style.animationDelay = `${index * 0.08}s`
+    titulo.appendChild(span)
+})
+</script>
+
+</body>
+</html>
